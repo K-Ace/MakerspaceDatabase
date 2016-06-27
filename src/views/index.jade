@@ -1,0 +1,65 @@
+doctype html
+html(lang='en')
+  head
+    title Bootstrap Example
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    link(rel='stylesheet', href='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css')
+    script(src='https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js')
+    script(src='http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js')
+  body
+    .jumbotron.text-center
+      h1 Bootstrap Test Site
+      p Will Kris ever learn?
+    .container
+      ul.nav.nav-tabs
+        li.active
+          a(data-toggle='tab', href='#dashboard') Dashboard
+        li
+          a(data-toggle='tab', href='#users') Users
+      .tab-content
+        #dashboard.tab-pane.fade.in.active
+          br
+          br
+          .panel.panel-default
+            .panel-heading Add a new user:
+            .panel-body
+              form.form-horizontal(role='form', action='index', method='POST')
+                .form-group
+                  label.control-label.col-sm-2(for='text') Name:
+                  .col-sm-10
+                    input.form-control(type='text', name='text', placeholder='Enter Name')
+                .form-group
+                  label.control-label.col-sm-2(for='email') Email:
+                  .col-sm-10
+                    input.form-control(type='email', name='email', placeholder='Enter Email')
+                .form-group
+                  label.control-label.col-sm-2(for='date') Joined:
+                  .col-sm-10
+                    input.form-control(type='date', name='date', placeholder='Enter password')
+                .form-group
+                  .col-sm-offset-2.col-sm-10
+                    button.btn.btn-default(type='submit') Submit
+        #users.tab-pane.fade
+          br
+          br
+          .row
+            table.table.table-bordered
+              thead
+                tr
+                  th Firstname
+                  th Lastname
+                  th Email
+              tbody
+                tr
+                  td John
+                  td Doe
+                  td john@example.com
+                tr
+                  td Mary
+                  td Moe
+                  td mary@example.com
+                tr
+                  td July
+                  td Dooley
+                  td july@example.com
