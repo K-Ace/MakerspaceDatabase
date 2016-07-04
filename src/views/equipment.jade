@@ -1,0 +1,112 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Makerspace Administration
+    style
+        include ./styles.jade
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+  body
+    #wrapper
+      // Navigation
+      include ./navbar.jade
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Equipment
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-12
+            .panel.panel-default
+              .panel-heading
+                | DataTables Advanced Tables
+              // /.panel-heading
+              .panel-body
+                .dataTable_wrapper
+                  table#dataTables-example.table.table-striped.table-bordered.table-hover
+                    thead
+                      tr
+                        th Name
+                        th ID
+                        th Type
+                        th Status
+                    tbody
+                      tr.odd.gradeX
+                        td Epilog Mini 18
+                        td LC-1
+                        td Laser Cutter/Engraver
+                        td
+                          font(color='green')
+                            i.fa.fa-check.fa-fw
+                            strong  Active
+                      tr.odd.gradeX
+                        td PrintrBot Simple Metal
+                        td 3DP-1
+                        td 3D Printer (Small)
+                        td
+                          font(color='green')
+                            i.fa.fa-check.fa-fw
+                            strong  Active
+                      tr.odd.gradeX
+                        td PrintrBot Simple Metal
+                        td 3DP-2
+                        td 3D Printer (Small)
+                        td
+                          font(color='green')
+                            i.fa.fa-check.fa-fw
+                            strong  Active
+                      tr.odd.gradeX
+                        td PrintrBot Simple Metal
+                        td 3DP-3
+                        td 3D Printer (Small)
+                        td
+                          font(color='red')
+                            i.fa.fa-exclamation-triangle.fa-fw
+                            strong  Inactive
+                      tr.odd.gradeX
+                        td GCC Expert Pro (EP-132S)
+                        td VC-1
+                        td Vinyl Cutter
+                        td
+                          font(color='green')
+                            i.fa.fa-check.fa-fw
+                            strong  Active
+                // /.table-responsive
+              // /.panel-body
+            .well
+              a(href='https://datatables.net/reference/event/select') Table section event (Javascript)
+              p
+                | For complete documentation on DataTables, visit their website at 
+                a(target='_blank', href='https://datatables.net/') https://datatables.net/
+            // /.panel
+          // /.col-lg-12
+        // /.row
+      // /#page-wrapper
+    // /#wrapper
+    // jQuery
+    script(src='../bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
+    // DataTables JavaScript
+    script(src='../bower_components/datatables/media/js/jquery.dataTables.min.js')
+    script(src='../bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js')
+    // Custom Theme JavaScript
+    script(src='../dist/js/sb-admin-2.js')
+    // Page-Level Demo Scripts - Tables - Use for reference
+    script.
+      $(document).ready(function() {
+      $('#dataTables-example').DataTable({
+      responsive: true
+      });
+      });
