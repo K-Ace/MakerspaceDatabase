@@ -1,0 +1,82 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Makerspace Administration
+    style
+        include ./styles.jade
+    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
+    // WARNING: Respond.js doesn't work if you view the page via file://
+    //if lt IE 9
+      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
+      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+      script(src='https://use.fontawesome.com/9a4a4c94e1.js')
+  body
+    #wrapper
+      // Navigation
+      include ./navbar.jade
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Add User
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-12
+            .panel.panel-default
+              .panel-heading Enter the user information:
+              .panel-body
+                .row
+                  .col-lg-12
+                    form(role='form')
+                      .form-group
+                        label Name
+                        input.form-control
+                        p.help-block Include first and last name.
+                      .form-group
+                        label Email
+                        input.form-control(placeholder='name@example.com')
+                      .form-group
+                        label Joined
+                        input.form-control(type='date')
+                      .form-group
+                        label Affiliation
+                        select.form-control
+                          option UNH Undergraduate Student
+                          option UNH Graduate Student
+                          option UNH Faculty/Staff
+                          option Other
+                      .form-group
+                        label Role
+                        select.form-control
+                          option User
+                          option Mentor
+                          option Volunteer
+                          option Master
+                          option Board Member
+                          option Other
+                      .form-group
+                        label RFID Tag Number
+                        input.form-control(type='number', placeholder='1234567890')
+                    button.btn.btn-default(type='submit') Submit Button
+                    button.btn.btn-default(type='reset') Reset Button
+                  // /.col-lg-6 (nested)
+                // /.row (nested)
+              // /.panel-body
+            // /.panel
+          // /.col-lg-12
+        // /.row
+      // /#page-wrapper
+    // /#wrapper
+    // jQuery
+    script(src='../bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
+    // Custom Theme JavaScript
+    script(src='../dist/js/sb-admin-2.js')
