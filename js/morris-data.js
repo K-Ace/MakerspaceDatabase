@@ -64,14 +64,14 @@ $(function() {
     Morris.Donut({
         element: 'morris-donut-chart',
         data: [{
-            label: "Download Sales",
-            value: 12
+            label: "Users",
+            value: 25
         }, {
-            label: "In-Store Sales",
-            value: 30
+            label: "Volunteers",
+            value: 6
         }, {
-            label: "Mail-Order Sales",
-            value: 20
+            label: "Administration",
+            value: 4
         }],
         resize: true
     });
