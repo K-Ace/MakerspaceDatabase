@@ -14,6 +14,7 @@ html(lang='en')
     //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
+      script(src='https://use.fontawesome.com/9a4a4c94e1.js')
   body
     #wrapper
       // Navigation
@@ -30,27 +31,27 @@ html(lang='en')
               .panel-heading Enter the requested information:
               .panel-body
                 .row
-                  .col-lg-10
+                  .col-lg-12
                     form(role='form')
                       .form-group
                         label Name
                         input.form-control
                         p.help-block What should be purchased?
                 .row
-                  .col-lg-5
+                  .col-lg-6
                     .form-group
                       label Cost
                       .form-group.input-group
                         span.input-group-addon $
                         input.form-control(type='number', min='0.01', step='0.01')
                       p.help-block Price per unit.
-                  .col-lg-5
+                  .col-lg-6
                     .form-group
                       label Quantity
                       input.form-control(type='number')
                       p.help-block How many of this item?
                 .row
-                  .col-lg-10
+                  .col-lg-12
                     .form-group
                       label Description
                       textarea.form-control(rows='3')
