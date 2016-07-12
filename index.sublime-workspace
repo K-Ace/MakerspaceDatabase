@@ -1,0 +1,260 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"pass",
+				"passwordIn"
+			],
+			[
+				"wr",
+				"writerow"
+			],
+			[
+				"affiliat",
+				"affiliationid"
+			],
+			[
+				"affil",
+				"affiliation"
+			],
+			[
+				"affi",
+				"affiliationString"
+			],
+			[
+				"aff",
+				"affiliationString"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 311.0,
+		"last_filter": "Package Control: I",
+		"selected_items":
+		[
+			[
+				"Package Control: I",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/krisf/AppData/Local/Temp/scp21962/var/www/html/index.html",
+		"/D/WebDev/database/MakerspaceDatabase/index.html",
+		"/C/Users/krisf/Documents/Standalone Programs/sdrsharp-x86/Plugins.xml",
+		"/C/Users/krisf/Downloads/freqscanner/freqscanner/net_4.6/MagicLine.txt",
+		"/C/Users/krisf/Downloads/dap/readme.txt",
+		"/C/Users/krisf/Downloads/meteor/MagicLine.txt",
+		"/C/Users/krisf/Downloads/dsd/MagicLine.txt",
+		"/C/Users/krisf/Downloads/ddetracker/readme.txt",
+		"/D/WebDev/database/MakerspaceDatabase/README.md",
+		"/D/WebDev/database/PiAccess/README.md",
+		"/D/SteamLibrary/steamapps/common/Grand Theft Auto V/commandline.txt",
+		"/D/SteamLibrary/steamapps/common/Grand Theft Auto V/EnhancedNativeTrainer.asi",
+		"/D/SteamLibrary/steamapps/common/Grand Theft Auto V/ent-config.xml",
+		"/D/SteamLibrary/steamapps/common/Grand Theft Auto V/LSPDFR/lspdfr.ini",
+		"/C/Users/krisf/Documents/GitHub/Scripts/test.txt",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/users.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/purchase-request.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/styles.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/login.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/index.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/adduser.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/views/equipment.jade",
+		"/D/WebDev/database/MakerspaceDatabase/src/package.json",
+		"/D/WebDev/database/PiAccess/access.py",
+		"/D/WebDev/database/PiAccess/report.py",
+		"/D/WebDev/database/MakerspaceDatabase/pages/adduser.html",
+		"/D/WebDev/database/MakerspaceDatabase/pages/purchase-request.html",
+		"/D/WebDev/database/MakerspaceDatabase/pages/index.html",
+		"/D/WebDev/database/MakerspaceDatabase/js/morris-data.js",
+		"/D/WebDev/KrisFargo/3/index.html",
+		"/D/WebDev/KrisFargo/3/css/freelancer.css",
+		"/D/WebDev/KrisFargo/2/index.html",
+		"/D/WebDev/database/MakerspaceDatabase/pages/equipment.html",
+		"/D/WebDev/database/MakerspaceDatabase/pages/users.html",
+		"/D/WebDev/database/MakerspaceDatabase/pages/forms.html",
+		"/D/WebDev/database/index.html",
+		"/D/WebDev/Test/index.html",
+		"/D/WebDev/bootstrap-3.3.6/README.md",
+		"/C/Users/krisf/Downloads/bootstrap-3.3.6/less/variables.less",
+		"/C/Users/krisf/Downloads/New Text Document.html",
+		"/C/Users/krisf/Downloads/bootstrap-3.3.6/docs/about.html"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 90.0,
+		"where_history":
+		[
+			"D:\\WebDev\\database"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"graph",
+			"morris",
+			"morriss",
+			"morris",
+			"ff0000",
+			"url",
+			"18BC9C",
+			"iphone",
+			"ipad",
+			"itouch",
+			"iphone",
+			"disabled",
+			"add user",
+			"search",
+			"show",
+			"server rebooted",
+			"users",
+			"menu1",
+			">\n",
+			"default",
+			">\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"ff0000",
+			"all",
+			"mentors",
+			"users"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "index.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 269.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

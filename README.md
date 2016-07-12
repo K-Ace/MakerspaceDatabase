@@ -1,4 +1,4 @@
-# [Makerspace Admin Stie](http://makerspace.unh.edu/admin)
+# [Makerspace Admin Site](http://makerspace.unh.edu/admin)
 
 ## Creator
 
