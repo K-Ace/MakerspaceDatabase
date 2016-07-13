@@ -24,4 +24,8 @@ router.get('/equipment', function(req, res, next) {
   res.render('equipment');
 });
 
+router.get('/login', function(req, res, next) {
+  res.render('login');
+});
+
 module.exports = router;

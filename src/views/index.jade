@@ -20,6 +20,8 @@ html(lang='en')
     #wrapper
       // Navigation
       include ./navbar.jade
+
+
       #page-wrapper
         .row
           .col-lg-12
@@ -92,26 +94,7 @@ html(lang='en')
                   .clearfix
         // /.row
         .row
-          .col-lg-8
-            .panel.panel-default
-              .panel-heading
-                i.fa.fa-bar-chart-o.fa-fw
-                |  Usage over Time
-                .pull-right
-                  .btn-group
-                    button.btn.btn-default.btn-xs.dropdown-toggle(type='button', data-toggle='dropdown')
-                      | Actions
-                      span.caret
-                    ul.dropdown-menu.pull-right(role='menu')
-                      li
-                        a(href='#') Expand
-                      li.divider
-                      li
-                        a(href='#')
-                          i.fa.fa-eye-slash
-                          |  Hide
-              // /.panel-body
-            // /.panel
+          .col-lg-8            
             .panel.panel-default
               .panel-heading
                 i.fa.fa-clock-o.fa-fw
