@@ -22,14 +22,14 @@ function connect()
     });
 }
 
-function addUser(name, email, dateJoined, affiliation, role, rfid)
+function addUser(firstName, lastName, email, dateJoined, affiliation, role, rfid)
 {
     connect();
     
-    console.log("Post Attributes: \n\tName: " + name + "\n\tEmail: " + email + "\n\tJoined: " + dateJoined
+    console.log("Post Attributes: \n\tName: " + firstName + " " + lastName + "\n\tEmail: " + email + "\n\tJoined: " + dateJoined
                + "\n\tAffiliation: " + affiliation + "\n\tRole: " + role + "\n\tRfid: " + rfid);
     
-    dbConnection.query("select * from members where firstName = '" + name + "'", function(err,rows) {
+    dbConnection.query("select * from members where lastName = '" + lastName + "'", function(err,rows) {
 			console.log(rows);
 			console.log("above row object");
 			if (err)
@@ -42,10 +42,11 @@ function addUser(name, email, dateJoined, affiliation, role, rfid)
                 // create the user
                 var newUserMysql = new Object();
 				
-				newUserMysql.firstName    = name;
+				newUserMysql.firstName    = firstName;
+                newUserMysql.lastName     = lastName;
                 newUserMysql.email = email; // use the generateHash function in our user model
 			
-				var insertQuery = "INSERT INTO members ( firstName, email ) values ('" + name +"','"+ email +"')";
+				var insertQuery = "INSERT INTO members ( firstName, lastName, email ) values ('" + firstName + "','" + lastName + "','" + email + "')";
 					console.log(insertQuery);
                 
 				dbConnection.query(insertQuery,function(err,rows){

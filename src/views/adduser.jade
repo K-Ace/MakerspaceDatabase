@@ -32,47 +32,47 @@ html(lang='en')
               .panel-heading Enter the user information:
               .panel-body
                 .row
+                  form(role='form', action='addUser', method='post')
+                  .col-lg-6
+                    .form-group
+                      label First Name
+                      input.form-control(type='text', name='firstName')
+                      //p.help-block Include first and last name.
+                  .col-lg-6
+                    .form-group
+                      label Last Name
+                      input.form-control(type='text', name='lastName')
+                      //p.help-block Include first and last name.
                   .col-lg-12
-                    form(role='form', action='addUser', method='post')
-                        .form-group
-                            label Name
-                            input.form-control(type='text', name='name')
-                            p.help-block Include first and last name.
-                        .form-group
-                            label Email
-                            input.form-control(placeholder='name@example.com', name="email")
-                        .form-group
-                            label Joined
-                            input.form-control(type='date', name='joined')
-                        .form-group
-                            label Affiliation
-                            select.form-control(name='affiliation')
-                                option UNH Undergraduate Student
-                                option UNH Graduate Student
-                                option UNH Faculty/Staff
-                                option Other
-                        .form-group
-                            label Role
-                            select.form-control(name='role')
-                                option User
-                                    option Mentor
-                                    option Volunteer
-                                    option Master
-                                    option Board Member
-                                    option Other
-                        .form-group
-                            label RFID Tag Number
-                            input.form-control(type='number', placeholder='1234567890', name='tagNum')
-                        button.btn.btn-default(type='submit') Submit Button
-                        button.btn.btn-default(type='reset') Reset Button
-                  // /.col-lg-6 (nested)
-                // /.row (nested)
-              // /.panel-body
-            // /.panel
-          // /.col-lg-12
-        // /.row
-      // /#page-wrapper
-    // /#wrapper
+                    .form-group
+                      label Email
+                      input.form-control(placeholder='name@example.com', name="email")
+                    .form-group
+                      label Joined
+                      input.form-control(type='date', name='joined')
+                    .form-group
+                      label Affiliation
+                      select.form-control(name='affiliation')
+                        option UNH Undergraduate Student
+                        option UNH Graduate Student
+                        option UNH Faculty/Staff
+                        option Other
+                    .form-group
+                      label Role
+                      select.form-control(name='role')
+                        option User
+                          option Mentor
+                          option Volunteer
+                          option Master
+                          option Board Member
+                          option Other
+                    .form-group
+                        label RFID Tag Number
+                        input.form-control(type='number', placeholder='1234567890', name='tagNum')
+                
+                    button.btn.btn-primary(type='submit') Submit
+                    //button.btn.btn-default(type='reset') Reset
+
     // jQuery
     script(src='../bower_components/jquery/dist/jquery.min.js')
     // Bootstrap Core JavaScript
