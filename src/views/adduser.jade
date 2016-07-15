@@ -33,38 +33,38 @@ html(lang='en')
               .panel-body
                 .row
                   .col-lg-12
-                    form(role='form')
-                      .form-group
-                        label Name
-                        input.form-control
-                        p.help-block Include first and last name.
-                      .form-group
-                        label Email
-                        input.form-control(placeholder='name@example.com')
-                      .form-group
-                        label Joined
-                        input.form-control(type='date')
-                      .form-group
-                        label Affiliation
-                        select.form-control
-                          option UNH Undergraduate Student
-                          option UNH Graduate Student
-                          option UNH Faculty/Staff
-                          option Other
-                      .form-group
-                        label Role
-                        select.form-control
-                          option User
-                          option Mentor
-                          option Volunteer
-                          option Master
-                          option Board Member
-                          option Other
-                      .form-group
-                        label RFID Tag Number
-                        input.form-control(type='number', placeholder='1234567890')
-                    button.btn.btn-default(type='submit') Submit Button
-                    button.btn.btn-default(type='reset') Reset Button
+                    form(role='form', action='addUser', method='post')
+                        .form-group
+                            label Name
+                            input.form-control(type='text', name='name')
+                            p.help-block Include first and last name.
+                        .form-group
+                            label Email
+                            input.form-control(placeholder='name@example.com', name="email")
+                        .form-group
+                            label Joined
+                            input.form-control(type='date', name='joined')
+                        .form-group
+                            label Affiliation
+                            select.form-control(name='affiliation')
+                                option UNH Undergraduate Student
+                                option UNH Graduate Student
+                                option UNH Faculty/Staff
+                                option Other
+                        .form-group
+                            label Role
+                            select.form-control(name='role')
+                                option User
+                                    option Mentor
+                                    option Volunteer
+                                    option Master
+                                    option Board Member
+                                    option Other
+                        .form-group
+                            label RFID Tag Number
+                            input.form-control(type='number', placeholder='1234567890', name='tagNum')
+                        button.btn.btn-default(type='submit') Submit Button
+                        button.btn.btn-default(type='reset') Reset Button
                   // /.col-lg-6 (nested)
                 // /.row (nested)
               // /.panel-body
