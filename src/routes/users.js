@@ -14,7 +14,7 @@ router.get('/addUser', function(req, res, next) {
 router.post('/addUser', function(req, res, next) {
     //database.connect();
 
-    database.addUser(req.body.name, req.body.email, req.body.joined, req.body.affiliation, req.body.role, req.body.tagNum);
+    database.addUser(req.body.firstName, req.body.lastName, req.body.email, req.body.joined, req.body.affiliation, req.body.role, req.body.tagNum);
     res.render('addUser');
 });
 
