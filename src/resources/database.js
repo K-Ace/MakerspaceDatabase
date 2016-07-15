@@ -3,10 +3,10 @@
 var database = require('mysql');
 
 var dbConnection = database.createConnection({
-    host : 'the website we want to use',
-    user : 'web',
-    password : 'Tll8PmlDd7EzupTBzJbD',
-    database : 'database'
+    host : '',
+    user : '',
+    password : '',
+    database : ''
 });
 
 
@@ -29,7 +29,7 @@ function addUser(name, email, dateJoined, affiliation, role, rfid)
     console.log("Post Attributes: \n\tName: " + name + "\n\tEmail: " + email + "\n\tJoined: " + dateJoined
                + "\n\tAffiliation: " + affiliation + "\n\tRole: " + role + "\n\tRfid: " + rfid);
     
-    dbConnection.query("select * from users where name = '" + name + "'", function(err,rows) {
+    dbConnection.query("select * from members where firstName = '" + name + "'", function(err,rows) {
 			console.log(rows);
 			console.log("above row object");
 			if (err)
@@ -42,14 +42,14 @@ function addUser(name, email, dateJoined, affiliation, role, rfid)
                 // create the user
                 var newUserMysql = new Object();
 				
-				newUserMysql.name    = name;
+				newUserMysql.firstName    = name;
                 newUserMysql.email = email; // use the generateHash function in our user model
 			
-				var insertQuery = "INSERT INTO users ( name, email ) values ('" + name +"','"+ email +"')";
+				var insertQuery = "INSERT INTO members ( firstName, email ) values ('" + name +"','"+ email +"')";
 					console.log(insertQuery);
                 
-				connection.query(insertQuery,function(err,rows){
-				    newUserMysql.id = rows.insertId;
+				dbConnection.query(insertQuery,function(err,rows){
+				    //newUserMysql.id = rows.insertId;
 				});	
             }	
 		});
