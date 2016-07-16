@@ -10,12 +10,15 @@ html(lang='en')
     style
         include ./styles.jade
     include ./scripts.jade
+    -var list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
+
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //if lt IE 9
       script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
       script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
       script(src='https://use.fontawesome.com/9a4a4c94e1.js')
+
   body
     #wrapper
       // Navigation
@@ -33,29 +36,29 @@ html(lang='en')
                 | DataTables Advanced Tables
               // /.panel-heading
               .panel-body
-                .dataTable_wrapper
-                  table#dataTables-example.table.table-striped.table-bordered.table-hover
-                    thead
-                      tr
-                        th Name
-                        th Email
-                        th Added
-                        th Role
-                        th Affiliation
-                    tbody
-                      tr.odd.gradeX
-                        td John Bluefin
-                        td captainbluefin@johnisaboss.com
-                        td 06/29/2016
-                        td User
-                        td UNH Undergraduate Student
-                // /.table-responsive
+
+                table#dataTable.table.table-striped.table-bordered
+                  thead
+                    tr
+                      th Name
+                      th Email
+                      th Added
+                      th Role
+                      th Affiliation
+                  tbody
+                    tr.odd.gradeX
+                      each item in list
+                        td= item
+
               // /.panel-body
             .well
-              a(href='https://datatables.net/reference/event/select') Table section event (Javascript)
+              h3 Reference
+              hr 
+              a(href='https://datatables.net/reference/event/select') Table selection event (Javascript)
               p
                 | For complete documentation on DataTables, visit their website at 
                 a(target='_blank', href='https://datatables.net/') https://datatables.net/
+
             // /.panel
           // /.col-lg-12
         // /.row
@@ -75,7 +78,7 @@ html(lang='en')
     // Page-Level Demo Scripts - Tables - Use for reference
     script.
       $(document).ready(function() {
-      $('#dataTables-example').DataTable({
-      responsive: true
-      });
+        $('#dataTable').DataTable({
+          responsive: true
+        });
       });

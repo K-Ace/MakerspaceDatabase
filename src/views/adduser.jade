@@ -10,6 +10,8 @@ html(lang='en')
     style
         include ./styles.jade
     include ./scripts.jade
+
+    -var alert = {type: '', description: 'Successfully added user Tommy.'}
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
     //if lt IE 9
@@ -28,6 +30,20 @@ html(lang='en')
         // /.row
         .row
           .col-lg-12
+            if alert.description
+              if alert.type == 'success'
+                .alert.alert-success.face.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
+              if alert.type == 'error' 
+                .alert.alert-danger.face.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
+              if alert.type == 'info' 
+                .alert.alert-danger.face.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
+                    
             .panel.panel-default
               .panel-heading Enter the user information:
               .panel-body
