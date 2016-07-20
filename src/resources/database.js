@@ -50,11 +50,11 @@ function addUser( request, alertFunction )
                 newUserMysql.lastName     = request.body.lastName;
                 newUserMysql.email        = request.body.email; // use the generateHash function in our user model
 
-                //Check that the email is valid, otherwise the databse won't accept the data
+                //Check that the email is valid, otherwise the database won't accept the data
 			
 				var insertQuery = "INSERT INTO members ( firstName, lastName, email, joinDate ) values ('"
                     + request.body.firstName + "','" + request.body.lastName + "','"
-                    + request.body.email + "','" + request.body.joinDate + "')";
+                    + request.body.email + "','" + request.body.joined + "')";
 				console.log(insertQuery);
                 
 				dbConnection.query(insertQuery,function(err,rows){
@@ -80,9 +80,9 @@ function getUsers( renderUsers )
     return dbConnection.query(queryString, function(err, rows, fields) {
         if (err) throw err;            
        
-        for (var i in rows) {
-            console.log(rows[i])
-        }
+        //for (var i in rows) {
+        //    console.log(rows[i])
+        //}
         
         renderUsers(rows);
     });

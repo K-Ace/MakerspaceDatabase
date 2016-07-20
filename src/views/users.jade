@@ -10,7 +10,6 @@ html(lang='en')
     style
         include ./styles.jade
     include ./scripts.jade
-    //-var list = ["Uno", "Dos", "Tres", "Cuatro", "Cinco"]
 
     // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
     // WARNING: Respond.js doesn't work if you view the page via file://
@@ -44,7 +43,6 @@ html(lang='en')
                       th Email
                       th Added
                       th Role
-                      th Affiliation
                   tbody
                     each user in userList
                         tr.odd.gradeX
