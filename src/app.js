@@ -3,8 +3,9 @@ var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-
 var bodyParser = require('body-parser')
+
+var database = require('./resources/database');
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -15,6 +16,8 @@ app.use( bodyParser.json() );       // to support JSON-encoded bodies
 app.use(bodyParser.urlencoded({     // to support URL-encoded bodies
   extended: true
 })); 
+
+app.database = database;
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
