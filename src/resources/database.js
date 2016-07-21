@@ -88,6 +88,23 @@ function getUsers( renderUsers )
     });
 }
 
+function getUserCount( count )
+{
+    var queryString = 'SELECT COUNT(*) AS userCount FROM members';
+
+    console.log(queryString);
+
+    return dbConnection.query(queryString, function(err, rows, fields) {
+        if (err) throw err;
+
+        // for (var i in rows) {
+        //     console.log(rows[i])
+        // }
+
+        count(rows[0]);
+    });
+}
+
 function killConnection()
 {
     dbConnection.end();
@@ -104,3 +121,4 @@ exports.killConnection = killConnection;
 exports.getConnection = getConnection;
 exports.addUser = addUser;
 exports.getUsers = getUsers;
+exports.getUserCount = getUserCount;

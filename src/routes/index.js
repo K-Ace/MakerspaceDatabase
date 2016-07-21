@@ -4,8 +4,12 @@ var database = require('../resources/database');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-   // database.connect();
-  res.render('index');
+  req.app.database.getUserCount( function( count ) {
+  		console.log(count.email);
+        res.render('index', { 
+        	userCount: count.userCount
+        });    
+    });
 });
 
 //router.post('/index', function(req, res, next) {
