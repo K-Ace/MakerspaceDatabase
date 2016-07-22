@@ -10,15 +10,15 @@ router.get('/', function(req, res, next) {
     });
 });
 
-router.get('/addUser', function(req, res, next) {
-  res.render('addUser', {
+router.get('/adduser', function(req, res, next) {
+  res.render('adduser', {
                 alert: { type: '', description: '' }
                });
 });
 
 router.post('/addUser', function(req, res, next) {
     req.app.database.addUser( req, function ( alertType, alertDescription ) {
-        res.render('addUser', {
+        res.render('adduser', {
                 alert: { type: alertType, description: alertDescription }
         });
     });
