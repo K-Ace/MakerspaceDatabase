@@ -1,0 +1,21 @@
+//.panel.panel-default
+  .panel-heading
+    i.fa.fa-bell.fa-fw
+    |  Notifications Panel
+  // /.panel-heading
+  .panel-body
+    .list-group
+      include ./notifications.jade
+    // /.list-group
+    a.btn.btn-default.btn-block(href='#') View All Alerts
+  // /.panel-body
+// /.panel
+.panel.panel-default
+  .panel-heading
+    i.fa.fa-bar-chart-o.fa-fw
+    |  Membership Breakdown
+  .panel-body
+    #morris-donut-chart
+    a.btn.btn-default.btn-block(href='users/') View Details
+  // /.panel-body
+// /.panel

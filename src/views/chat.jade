@@ -1,44 +1,85 @@
-li.right.clearfix
-  span.chat-img.pull-right
-    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
-  .chat-body.clearfix
-    .header
-      small.text-muted
-        i.fa.fa-clock-o.fa-fw
-        |  11 mins ago
-      strong.pull-right.primary-font Bhaumik Patel
-    p
-      | We have some in the cabinet. Make sure that it is applied to the gear and not on the belt. Thanks!
-li.left.clearfix
-  span.chat-img.pull-left
-    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
-  .chat-body.clearfix
-    .header
-      strong.primary-font Jack Sparrow
-      small.pull-right.text-muted
-        i.fa.fa-clock-o.fa-fw
-        |  14 mins ago
-    p
-      | Also, today I felt like 3DP-3 was grinding its gears. Perhaps we need to lube it.
-li.right.clearfix
-  span.chat-img.pull-right
-    img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
-  .chat-body.clearfix
-    .header
-      small.text-muted
-        i.fa.fa-clock-o.fa-fw
-        |  16 mins ago
-      strong.pull-right.primary-font Bhaumik Patel
-    p
-      | That sounds good. Perhaps we can have a discussion at the next meeting.
-li.left.clearfix
-  span.chat-img.pull-left
-    img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
-  .chat-body.clearfix
-    .header
-      strong.primary-font Jack Sparrow
-      small.pull-right.text-muted
-        i.fa.fa-clock-o.fa-fw
-        |  18 mins ago
-    p
-      | I noticed that people are leaving a mess. I want to make a notice for the door.
+.chat-panel.panel.panel-default
+  .panel-heading
+    i.fa.fa-comments.fa-fw
+    |                             Chat
+    .btn-group.pull-right
+      button.btn.btn-default.btn-xs.dropdown-toggle(type='button', data-toggle='dropdown')
+        i.fa.fa-chevron-down
+      ul.dropdown-menu.slidedown
+        li
+          a(href='#')
+            i.fa.fa-refresh.fa-fw
+            |  Refresh
+        li
+          a(href='#')
+            i.fa.fa-check-circle.fa-fw
+            |  Available
+        li
+          a(href='#')
+            i.fa.fa-times.fa-fw
+            |  Busy
+        li
+          a(href='#')
+            i.fa.fa-clock-o.fa-fw
+            |  Away
+        li.divider
+        li
+          a(href='#')
+            i.fa.fa-sign-out.fa-fw
+            |  Sign Out
+  // /.panel-heading
+  .panel-body
+    ul.chat
+      li.right.clearfix
+        span.chat-img.pull-right
+          img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
+        .chat-body.clearfix
+          .header
+            small.text-muted
+              i.fa.fa-clock-o.fa-fw
+              |  11 mins ago
+            strong.pull-right.primary-font Bhaumik Patel
+          p
+            | We have some in the cabinet. Make sure that it is applied to the gear and not on the belt. Thanks!
+      li.left.clearfix
+        span.chat-img.pull-left
+          img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
+        .chat-body.clearfix
+          .header
+            strong.primary-font Jack Sparrow
+            small.pull-right.text-muted
+              i.fa.fa-clock-o.fa-fw
+              |  14 mins ago
+          p
+            | Also, today I felt like 3DP-3 was grinding its gears. Perhaps we need to lube it.
+      li.right.clearfix
+        span.chat-img.pull-right
+          img.img-circle(src='http://placehold.it/50/FA6F57/fff', alt='User Avatar')
+        .chat-body.clearfix
+          .header
+            small.text-muted
+              i.fa.fa-clock-o.fa-fw
+              |  16 mins ago
+            strong.pull-right.primary-font Bhaumik Patel
+          p
+            | That sounds good. Perhaps we can have a discussion at the next meeting.
+      li.left.clearfix
+        span.chat-img.pull-left
+          img.img-circle(src='http://placehold.it/50/55C1E7/fff', alt='User Avatar')
+        .chat-body.clearfix
+          .header
+            strong.primary-font Jack Sparrow
+            small.pull-right.text-muted
+              i.fa.fa-clock-o.fa-fw
+              |  18 mins ago
+          p
+            | I noticed that people are leaving a mess. I want to make a notice for the door.
+  // /.panel-body
+  .panel-footer
+    .input-group
+      input#btn-input.form-control.input-sm(type='text', placeholder='Type your message here...')
+      span.input-group-btn
+        button#btn-chat.btn.btn-warning.btn-sm
+          | Send
+  // /.panel-footer
+// /.panel .chat-panel

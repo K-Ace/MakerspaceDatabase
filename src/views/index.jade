@@ -28,7 +28,7 @@ html(lang='en')
           // /.col-lg-12
         // /.row
         .row
-          .col-lg-3.col-md-6
+          .col-lg-3
             .panel.panel-primary
               .panel-heading
                 .row
@@ -43,7 +43,7 @@ html(lang='en')
                   span.pull-right
                     i.fa.fa-arrow-circle-right
                   .clearfix
-          .col-lg-3.col-md-6
+          .col-lg-3
             .panel.panel-green
               .panel-heading
                 .row
@@ -58,22 +58,22 @@ html(lang='en')
                   span.pull-right
                     i.fa.fa-arrow-circle-right
                   .clearfix
-          .col-lg-3.col-md-6
+          .col-lg-3
             .panel.panel-yellow
               .panel-heading
                 .row
                   .col-xs-3
                     i.fa.fa-usd.fa-5x
                   .col-xs-9.text-right
-                    .huge $1240
+                    .huge $1245
                     div Remaining budget
-              a(href='#')
+              a(href='finances')
                 .panel-footer
                   span.pull-left View Details
                   span.pull-right
                     i.fa.fa-arrow-circle-right
                   .clearfix
-          .col-lg-3.col-md-6
+          .col-lg-3
             .panel.panel-red
               .panel-heading
                 .row
@@ -82,92 +82,20 @@ html(lang='en')
                   .col-xs-9.text-right
                     .huge 2
                     div Inoperative equipment
-              a(href='#')
+              a(href='equipment')
                 .panel-footer
                   span.pull-left View Details
                   span.pull-right
                     i.fa.fa-arrow-circle-right
                   .clearfix
-        // /.row
         .row
-          //.col-lg-8            
-            .panel.panel-default
-              .panel-heading
-                i.fa.fa-clock-o.fa-fw
-                |  Responsive Timeline
-              // /.panel-heading
-              .panel-body
-                ul.timeline
-                  include ./timeline.jade
-              // /.panel-body
-            // /.panel
-          // /.col-lg-8
+          //.col-lg-8  
+            include ./timeline.jade
           .col-lg-4
-            //.panel.panel-default
-              .panel-heading
-                i.fa.fa-bell.fa-fw
-                |  Notifications Panel
-              // /.panel-heading
-              .panel-body
-                .list-group
-                  include ./notifications.jade
-                // /.list-group
-                a.btn.btn-default.btn-block(href='#') View All Alerts
-              // /.panel-body
-            // /.panel
-            //.panel.panel-default
-              .panel-heading
-                i.fa.fa-bar-chart-o.fa-fw
-                |  Membership Breakdown
-              .panel-body
-                #morris-donut-chart
-                a.btn.btn-default.btn-block(href='#') View Details
-              // /.panel-body
-            // /.panel
-            .chat-panel.panel.panel-default
-              .panel-heading
-                i.fa.fa-comments.fa-fw
-                |                             Chat
-                .btn-group.pull-right
-                  button.btn.btn-default.btn-xs.dropdown-toggle(type='button', data-toggle='dropdown')
-                    i.fa.fa-chevron-down
-                  ul.dropdown-menu.slidedown
-                    li
-                      a(href='#')
-                        i.fa.fa-refresh.fa-fw
-                        |  Refresh
-                    li
-                      a(href='#')
-                        i.fa.fa-check-circle.fa-fw
-                        |  Available
-                    li
-                      a(href='#')
-                        i.fa.fa-times.fa-fw
-                        |  Busy
-                    li
-                      a(href='#')
-                        i.fa.fa-clock-o.fa-fw
-                        |  Away
-                    li.divider
-                    li
-                      a(href='#')
-                        i.fa.fa-sign-out.fa-fw
-                        |  Sign Out
-              // /.panel-heading
-              .panel-body
-                ul.chat
-                  include ./chat.jade
-              // /.panel-body
-              .panel-footer
-                .input-group
-                  input#btn-input.form-control.input-sm(type='text', placeholder='Type your message here...')
-                  span.input-group-btn
-                    button#btn-chat.btn.btn-warning.btn-sm
-                      | Send
-              // /.panel-footer
-            // /.panel .chat-panel
-          // /.col-lg-4
-        // /.row
+            include ./donut.jade
+          .col-lg-8
+            include ./chat.jade
+
       // /#page-wrapper
     // /#wrapper
     // jQuery

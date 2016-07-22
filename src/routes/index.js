@@ -31,4 +31,8 @@ router.get('/login', function(req, res, next) {
   res.render('login');
 });
 
+router.get('/finances', function(req, res, next) {
+  res.render('finances');
+});
+
 module.exports = router;
