@@ -5,7 +5,6 @@ var database = require('../resources/database');
 /* GET home page. */
 router.get('/', function(req, res, next) {
   req.app.database.getUserCount( function( count ) {
-  		console.log(count.email);
         res.render('index', { 
         	userCount: count.userCount
         });    

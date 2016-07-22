@@ -24,4 +24,8 @@ router.post('/addUser', function(req, res, next) {
     });
 });
 
+router.get('/edit-user', function(req, res, next) {
+  res.render('edit-user');
+});
+
 module.exports = router;
