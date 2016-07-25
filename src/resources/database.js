@@ -71,6 +71,20 @@ function addUser( request, alertFunction )
 		});
 }
 
+exports.getUser = function( userId, alertFunction, fillFields ) {
+    var queryString = "SELECT * from members where firstName = '" + userId + "'";
+    dbConnection.query(queryString, function(err, rows) {
+        if (err)
+                alertFunction('error', 'No user ' + userId + ' exists.');
+        if (!rows.length) {
+             alertFunction('error', 'User already exists.');
+        } else {
+            fillFields(rows);
+        }
+        
+    });
+}
+
 function getUsers( renderUsers )
 {
     var queryString = 'SELECT firstName, lastName, email, joinDate FROM members';

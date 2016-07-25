@@ -48,6 +48,8 @@ html(lang='en')
                         tr.odd.gradeX
                             each attribute in user
                                 td= attribute
+                            td
+                                a(href='users/edit-user/' + user.firstName) Edit User
 
               // /.panel-body
             .well

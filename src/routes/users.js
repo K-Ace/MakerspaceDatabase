@@ -24,8 +24,19 @@ router.post('/addUser', function(req, res, next) {
     });
 });
 
-router.get('/edit-user', function(req, res, next) {
-  res.render('edit-user');
+router.get('/edit-user/:id', function(req, res, next) {
+   req.app.database.getUser( 
+        req.params.id,
+        function ( alertType, alertDescription ) { //Alert should be added eventually
+            res.redirect('/users');
+        },
+       function( fieldArray ) {
+            res.render('edit-user', { 
+                nameField: fieldArray[0].firstName,
+                surnameField: fieldArray[0].lastName
+            }); 
+       }
+    );
 });
 
 module.exports = router;

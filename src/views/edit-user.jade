@@ -37,11 +37,11 @@ html(lang='en')
                       .col-md-6
                         .form-group
                           label First Name
-                          input.form-control(type='text', name='firstName')
+                          input.form-control(type='text', name='firstName', value='#{nameField}') 
                       .col-md-6
                         .form-group
                           label Last Name
-                          input.form-control(type='text', name='lastName')
+                          input.form-control(type='text', name='lastName', value='#{surnameField}')
                       .col-lg-12
                         .form-group
                           label Email
@@ -79,7 +79,7 @@ html(lang='en')
                               .col-sm-3
                                 .form-group
                                   label Laser Trained
-                                  input.form-control(type='date', name='laserDate')
+                                  input.form-control(type='date', name='laserDate') 
                               .col-sm-3
                                 .form-group
                                   label 3D Printer Trained
