@@ -87,7 +87,7 @@ exports.getUser = function( userId, alertFunction, fillFields ) {
 
 function getUsers( renderUsers )
 {
-    var queryString = 'SELECT firstName, lastName, email, joinDate FROM members';
+    var queryString = 'SELECT firstName, lastName, email, joinDate, roleName FROM members join roles on members.role=roles.roleID';
 
     console.log(queryString);
 
