@@ -45,7 +45,7 @@ html(lang='en')
                       th Join Date
                       th Role
                       th Status
-                      th Edit 
+                      th Actions 
                   tbody
                     each user in userList
                         tr.odd.gradeX
@@ -54,6 +54,9 @@ html(lang='en')
                             td
                                 a(href='users/edit-user/' + user.firstName) 
                                  i.fa.fa-pencil-square.fa-2x
+                                &nbsp;&nbsp;&nbsp;
+                                a(href='users/view-user/' + user.firstName)
+                                  i.fa.fa-info-circle.fa-2x
 
               // /.panel-body
             .well

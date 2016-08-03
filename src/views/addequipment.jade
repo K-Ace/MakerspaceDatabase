@@ -25,7 +25,7 @@ html(lang='en')
       #page-wrapper
         .row
           .col-lg-12
-            h1.page-header Add User
+            h1.page-header Add Equipment
           // /.col-lg-12
         // /.row
         .row
@@ -50,44 +50,23 @@ html(lang='en')
                 .row
                   .col-lg-12
                     form(role='form', action='addUser', method='post')
-                      .col-lg-6
-                        .form-group
-                          label First Name
-                          input.form-control(type='text', name='firstName')
-                      .col-lg-6
-                        .form-group
-                          label Last Name
-                          input.form-control(type='text', name='lastName')
                       .col-lg-12
                         .form-group
-                          label Email
-                          input.form-control(placeholder='name@example.com', name="email")
+                          label Name
+                          input.form-control(type='text', name='name')
                         .form-group
-                          label Joined
+                          label Acquired
                           input.form-control(type='date', name='joined')
                         .form-group
-                          label Affiliation
-                          select.form-control(name='affiliation') 
-                            //Fill these in from database table called affiliation
-                            option UNH Undergraduate Student
-                            option UNH Graduate Student
-                            option UNH Faculty/Staff
+                          label Status
+                          select.form-control(name='status')
+                            option Active
+                            option Inactive
+                            option Maintenance Required
                             option Other
                         .form-group
-                          label Role
-                          select.form-control(name='role')
-                            option User
-                              option Mentor
-                              option Volunteer
-                              option Master
-                              option Board Member
-                              option Other
-                        .form-group
-                            label RFID Tag Number
-                            input.form-control(type='number', placeholder='1234567890', name='tagNum')
-                        .form-group
-                            label Notes
-                            textarea.form-control(name='notes')
+                            label ID
+                            input.form-control(type='number', placeholder='e.g. 3DP-1', name='id')
                 
                         button.btn.btn-primary(type='submit') Submit
                         //button.btn.btn-default(type='reset') Reset

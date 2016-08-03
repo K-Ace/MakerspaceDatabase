@@ -23,7 +23,7 @@ html(lang='en')
       include ./navbar.jade
       #page-wrapper
         .row
-          .h1.page-header.text-center John Sample
+          .h1.page-header.text-center #{nameField} #{surnameField}
           // /.col-lg-12
         // /.row
         .row
@@ -45,10 +45,10 @@ html(lang='en')
                       .col-lg-12
                         .form-group
                           label Email
-                          input.form-control(placeholder='name@example.com', name="email")
+                          input.form-control(placeholder='name@example.com', name="email", value='#{emailField}')
                         .form-group
                           label Joined
-                          input.form-control(type='date', name='joined')
+                          input.form-control(type='date', name='joined', value='#{joinedField}')
                         .form-group
                           label Affiliation
                           select.form-control(name='affiliation') 
@@ -115,7 +115,9 @@ html(lang='en')
                             textarea.form-control(type='', name='notes', style='resize:vertical')
 
                         button.btn.btn-primary(type='submit') Save
-                        button.btn.btn-default(type='reset') Cancel
+                        &nbsp;&nbsp;
+                        button.btn.btn-default 
+                          a(href='users') Cancel
                         button.btn.btn-danger.pull-right Delete User
 
     // jQuery
