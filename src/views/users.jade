@@ -52,10 +52,10 @@ html(lang='en')
                             each attribute in user
                                 td= attribute
                             td
-                                a(href='users/edit-user/' + user.firstName) 
-                                 i.fa.fa-pencil-square.fa-2x
+                                a(href='users/edit-user/' + user.id) 
+                                  i.fa.fa-pencil-square.fa-2x
                                 &nbsp;&nbsp;&nbsp;
-                                a(href='users/view-user/' + user.firstName)
+                                a(href='users/view-user/' + user.id)
                                   i.fa.fa-info-circle.fa-2x
 
               // /.panel-body

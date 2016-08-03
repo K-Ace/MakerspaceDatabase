@@ -42,17 +42,35 @@ html(lang='en')
                           strong Name: 
                           | #{nameField} #{surnameField}
                         p
+                          strong Gender: 
+                          | #{genderField}
+                        p
                           strong Email: 
                           | #{emailField}
                         p
-                          strong Role:
-                          | #{roleName}
+                          strong Affiliation:
+                          | #{affiliationField}
+                    .panel.panel-default
+                      .panel-heading Makerspace Information: 
+                      .panel-body
+                        p
+                          strong Joined:
+                          | #{joinedField}
                         p
                           strong Status:
-                          | #{status}
+                          | #{statusField}
+                        p
+                          strong Role:
+                          | #{roleField}
+                        p
+                          strong Status:
+                          | #{statusField}
+                        p
+                          strong RFID Number: 
+                          | #{rfidField}
                     .panel.panel-default
                       .panel-heading Notes: 
-                      .panel-body Lorem ipsum #{notes}
+                      .panel-body #{notesField}
 
 
     // jQuery

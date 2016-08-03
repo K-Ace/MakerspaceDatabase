@@ -72,7 +72,7 @@ function addUser( request, alertFunction )
 }
 
 exports.getUser = function( userId, alertFunction, fillFields ) {
-    var queryString = "SELECT * from members where firstName = '" + userId + "'";
+    var queryString = "SELECT * from members where id = '" + userId + "' ";
     dbConnection.query(queryString, function(err, rows) {
         if (err)
                 alertFunction('error', 'No user ' + userId + ' exists.');
