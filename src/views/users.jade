@@ -47,16 +47,16 @@ html(lang='en')
                       th Status
                       th Actions 
                   tbody
-                    each user in userList
+                    each user in userParams
                         tr.odd.gradeX
-                            each attribute in user
+                            each attribute in user.attributes
                                 td= attribute
                             td
-                                a(href='users/edit-user/' + user.firstName) 
-                                 i.fa.fa-pencil-square.fa-2x
+                                a(href='users/edit-user/' + user.userId) 
+                                    i.fa.fa-pencil-square.fa-2x
                                 &nbsp;&nbsp;&nbsp;
-                                a(href='users/view-user/' + user.firstName)
-                                  i.fa.fa-info-circle.fa-2x
+                                a(href='users/view-user/' + user.userId)
+                                    i.fa.fa-info-circle.fa-2x
 
               // /.panel-body
             .well

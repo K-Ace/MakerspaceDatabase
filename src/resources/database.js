@@ -3,11 +3,11 @@
 var database = require('mysql');
 
 var dbConnection = database.createConnection({
-    host : 'placeholder',
-    user : 'placeholder',
-    password : 'placeholder',
-    database : 'placeholder',
-    dateStrings: 'placeholder'
+    host : 'makerspace.unh.edu',
+    user : 'web',
+    password : 'H5y7bUDOZOOn4r8dlCVff5BMKlwYjICA',
+    database : 'database',
+    dateStrings: 'dates'
 });
 
 
@@ -30,32 +30,20 @@ function addUser( request, alertFunction )
 //    console.log("Post Attributes: \n\tName: " + firstName + " " + lastName + "\n\tEmail: " + email + "\n\tJoined: " + dateJoined
 //               + "\n\tAffiliation: " + affiliation + "\n\tRole: " + role + "\n\tRfid: " + rfid);
     
-    dbConnection.query("select * from members where lastName = '" + request.body.lastName + "'", function(err,rows) {
+    dbConnection.query("select * from members where id = '" + request.params.tagNum + "'", function(err,rows) {
 			console.log(rows);
 			console.log("above row object");
 			if (err)
-                alertFunction('error', 'User already exists.');
+                alertFunction('error', 'Your request could not be processed right now.');
 			 if (rows.length) {
                 //"Error! User already exists by the name: " + firstName + " " + lastName
                 // Use a jade alert from bootstrap? http://www.w3schools.com/bootstrap/bootstrap_alerts.asp
                  alertFunction('error', 'User already exists.');
                 console.log("User already exists");
             } else {
-
-				// if there is no user with that name
-                // create the user
-                var newUserMysql = new Object();
-				
-				newUserMysql.firstName    = request.body.firstName;
-                newUserMysql.lastName     = request.body.lastName;
-                newUserMysql.email        = request.body.email; // use the generateHash function in our user model
-
-                //Check that the email is valid, otherwise the database won't accept the data
-			
 				var insertQuery = "INSERT INTO members ( firstName, lastName, email, joinDate ) values ('"
                     + request.body.firstName + "','" + request.body.lastName + "','"
                     + request.body.email + "','" + request.body.joined + "')";
-				console.log(insertQuery);
                 
 				dbConnection.query(insertQuery,function(err,rows){
 				    //newUserMysql.id = rows.insertId;
@@ -71,8 +59,32 @@ function addUser( request, alertFunction )
 		});
 }
 
+exports.editUser = function( userId, request, alertFunction ) {
+    dbConnection.query("select * from members where id = '" + userId + "'", function(err,rows) {
+        if( err )
+            alertFunction('error', 'Your request could not be processed right now.');
+        if( rows.length ) {
+//            var updateQuery = "UPDATE members SET lastName ";
+//            
+//            dbConnection.query( updateQuery, function(err, newRows) {
+//                if(err) {
+//                    console.log(err);
+//                    alertFunction('error', 'Your request could not be processed right now.');
+//                }   
+//                else 
+//                    alertFunction('success', 'Successfully edited ' + rows[0].firstName + " "
+//                                 + rows[0].lastName);
+//            });
+            //Need stuff here
+            console.log("Hi");
+        } else {
+            
+        }
+    });
+}
+
 exports.getUser = function( userId, alertFunction, fillFields ) {
-    var queryString = "SELECT * from members where firstName = '" + userId + "'";
+    var queryString = "SELECT * from members where id = '" + userId + "'";
     dbConnection.query(queryString, function(err, rows) {
         if (err)
                 alertFunction('error', 'No user ' + userId + ' exists.');
@@ -87,23 +99,26 @@ exports.getUser = function( userId, alertFunction, fillFields ) {
 
 function getUsers( renderUsers )
 {
-    var queryString = 'select firstName, lastName, email, joinDate, roleName, memberStatus.status ' +
+    var queryString = 'select * ' +
     'from members ' +
     'join roles on members.role = roles.roleID ' +
     'join memberStatus on members.status = memberStatus.statusID';
 
-
-
-    console.log(queryString);
-
     return dbConnection.query(queryString, function(err, rows, fields) {
-        if (err) throw err;            
-       
-        //for (var i in rows) {
-        //    console.log(rows[i])
-        //}
+        if (err)
+        {
+            console.log(err);
+            renderUsers([[]]);
+        }
+        var userArray = [[]];
         
-        renderUsers(rows);
+        for( i = 0; i < rows.length; i++ )
+            userArray[i] = {
+                userId: rows[i].id,
+                attributes: [ rows[i].firstName, rows[i].lastName, rows[i].email, rows[i].joinDate, rows[i].roleName, rows[i].status ]
+            }
+        
+        renderUsers( userArray );
     });
 }
 
