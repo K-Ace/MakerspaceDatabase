@@ -63,18 +63,14 @@ exports.editUser = function( userId, request, alertFunction ) {
     
     console.log('gonna save!');   
 
-    var updateQuery = "UPDATE members SET lastName = '" + request.body.lastName + "' where id = " + userId;
+    var updateQuery = "UPDATE members SET " +
+    "firstName = '" + request.body.firstName + "', " +
+    "lastName = '" + request.body.lastName + "', " +
+    "email = '" + request.body.email + "', " +
+    "notes = '" + request.body.notes + "' " +
+    "where id = " + userId;
     console.log(updateQuery);
     
-    // dbConnection.query( updateQuery, function(err, newRows) {
-    //     if(err) {
-    //         console.log(err);
-    //         alertFunction('error', 'Your request could not be processed right now.');
-    //     }   
-    //     else 
-    //         alertFunction('success', 'Successfully edited ' + rows[0].firstName + " "
-    //                      + rows[0].lastName);
-    // });
     dbConnection.query( updateQuery, function(err, newRows) {
         if(err) {
             console.log(err);
