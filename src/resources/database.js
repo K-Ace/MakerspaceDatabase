@@ -60,8 +60,24 @@ function addUser( request, alertFunction )
 }
 
 exports.editUser = function( userId, request, alertFunction ) {
-    dbConnection.query("select * from members where id = '" + userId + "'", function(err,rows) {
-        if( err )
+    
+    console.log('gonna save!');   
+
+    var updateQuery = "UPDATE members SET lastName = '" + request.body.lastName + "' where id = " + userId;
+    console.log(updateQuery);
+    
+    // dbConnection.query( updateQuery, function(err, newRows) {
+    //     if(err) {
+    //         console.log(err);
+    //         alertFunction('error', 'Your request could not be processed right now.');
+    //     }   
+    //     else 
+    //         alertFunction('success', 'Successfully edited ' + rows[0].firstName + " "
+    //                      + rows[0].lastName);
+    // });
+    dbConnection.query( updateQuery, function(err, newRows) {
+        if(err) {
+            console.log(err);
             alertFunction('error', 'Your request could not be processed right now.');
         if( rows.length ) {
 //            var updateQuery = "UPDATE members SET lastName ";
@@ -78,7 +94,7 @@ exports.editUser = function( userId, request, alertFunction ) {
             //Need stuff here
             console.log(request.body.firstName);
         } else {
-            
+            alertFunction('success', 'Successfully edited user!');
         }
     });
 }

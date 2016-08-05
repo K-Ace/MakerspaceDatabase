@@ -28,12 +28,25 @@ html(lang='en')
         // /.row
         .row
           .col-lg-12
+            if alert.description
+              if alert.type == 'success'
+                .alert.alert-success.fade.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
+              if alert.type == 'error' 
+                .alert.alert-danger.fade.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
+              if alert.type == 'info' 
+                .alert.alert-danger.fade.in 
+                  p.description= alert.description
+                    a(href="#" class='close' data-dismiss='alert' aria-label='close') &times
             .panel.panel-default
               .panel-heading Edit user:
               .panel-body
                 .row
                   .col-lg-12
-                    form(role='form', action='/users/edit-user/' + userId, method='post')
+                    form(role='form', action = userId, method='post')
                       .col-md-6
                         .form-group
                           label First Name
@@ -51,7 +64,7 @@ html(lang='en')
                           input.form-control(type='date', name='joined', value='#{joinedField}')
                         .form-group
                           label Affiliation
-                          select.form-control(name='affiliation') 
+                          select.form-control(name='affiliation', value='#{affiliationField}') 
                             //Fill these in from database table called affiliation
                             option UNH Undergraduate Student
                             option UNH Graduate Student
@@ -68,7 +81,7 @@ html(lang='en')
                               option Other
                         .form-group
                             label RFID Tag Number
-                            input.form-control(type='number', placeholder='1234567890', name='tagNum')
+                            input.form-control(type='number', value='#{rfidField}')
                         
 
                         .panel.panel-default
@@ -112,10 +125,11 @@ html(lang='en')
 
                         .form-group
                             label Notes
-                            textarea.form-control(type='', name='notes', style='resize:vertical')
+                            textarea.form-control(type='', name='notes', style='resize:vertical', rows=6)
+                              | #{notesField}
 
                         button.btn.btn-primary(type='submit') Save
-                        &nbsp;&nbsp;
+                        | &nbsp;&nbsp;
                         button.btn.btn-default 
                           a(href='users') Cancel
                         button.btn.btn-danger.pull-right Delete User
