@@ -48,8 +48,22 @@ router.post('/edit-user/:id', function(req, res, next ) {
         req.params.id,
         req,
         function( alertType, alertDescription ) {
-            //res.('/users/edit-user/' + req.params.id);
-           //Do something here 
+                req.app.database.getUser( 
+                   req.params.id,
+                   function ( alertType, alertDescription ) { //Alert should be added eventually
+                       console.log(alertDescription);
+                       res.redirect('/users');
+                    },
+                   function( fieldArray ) {
+                        res.render('edit-user', { 
+                            userId: fieldArray[0].id,
+                            nameField: fieldArray[0].firstName,
+                            surnameField: fieldArray[0].lastName,
+                            emailField: fieldArray[0].email,
+                            joinedField: fieldArray[0].joinDate
+                        }); 
+                   }
+                );
         });
 });
 

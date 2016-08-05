@@ -5,7 +5,7 @@ var database = require('mysql');
 var dbConnection = database.createConnection({
     host : 'makerspace.unh.edu',
     user : 'web',
-    password : 'H5y7bUDOZOOn4r8dlCVff5BMKlwYjICA',
+    password : 'GlGNR5yckoppvyOaLB3YVorOD0lSy0kg',
     database : 'database',
     dateStrings: 'dates'
 });
@@ -76,7 +76,7 @@ exports.editUser = function( userId, request, alertFunction ) {
 //                                 + rows[0].lastName);
 //            });
             //Need stuff here
-            console.log("Hi");
+            console.log(request.body.firstName);
         } else {
             
         }
