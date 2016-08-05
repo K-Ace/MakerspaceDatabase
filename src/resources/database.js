@@ -76,6 +76,7 @@ exports.editUser = function( userId, request, alertFunction ) {
                                 "firstName = '" + request.body.firstName + "', " +
                                 "lastName = '" + request.body.lastName + "', " +
                                 "email = '" + request.body.email + "', " +
+                                "joinDate = '" + request.body.joined + "', " +
                                 "notes = '" + request.body.notes + "' " +
                                 "where id = " + userId;
             console.log(updateQuery);
