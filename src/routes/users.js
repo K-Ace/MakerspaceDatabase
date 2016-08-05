@@ -41,15 +41,17 @@ router.get('/edit-user/:id', function(req, res, next) {
                 affiliationField: fieldArray[0].affiliation,
                 rfidField: fieldArray[0].rfidNumber,
                 joinedField: fieldArray[0].joinDate,
-                notesField: fieldArray[0].notes
-            }); 
-       }
-    );
+                notesField: fieldArray[0].notes,
+                alert: { type: '', description: '' }
+               });
+        }); 
 });
 
 router.post('/edit-user/:id', function(req, res, next ) {
     req.app.database.editUser(req.params.id, req, function ( alertType, alertDescription ) {
-        res.render('users');
+        res.render('/edit-user/' + req.params.id, {
+                alert: { type: alertType, description: alertDescription }
+        });
     });
 });
 
