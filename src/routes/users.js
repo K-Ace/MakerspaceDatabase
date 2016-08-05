@@ -60,16 +60,20 @@ router.post('/edit-user/:id', function(req, res, next ) {
                     },
                    function( fieldArray ) {
                         res.render('edit-user', { 
-                            userId: fieldArray[0].id,
-                            nameField: fieldArray[0].firstName,
-                            surnameField: fieldArray[0].lastName,
-                            emailField: fieldArray[0].email,
-                            joinedField: fieldArray[0].joinDate
-                        }); 
+                        nameField: fieldArray[0].firstName,
+                        surnameField: fieldArray[0].lastName,
+                        genderField: fieldArray[0].gender,
+                        emailField: fieldArray[0].email,
+                        statusField: fieldArray[0].status,
+                        affiliationField: fieldArray[0].affiliation,
+                        rfidField: fieldArray[0].rfidNumber,
+                        joinedField: fieldArray[0].joinDate,
+                        notesField: fieldArray[0].notes,
+                        alert: { type: '', description: '' }
+                       }); 
                    }
                 );
         });
-    });
 });
 
 router.get('/view-user/:id', function(req, res, next) {

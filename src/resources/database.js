@@ -60,37 +60,42 @@ function addUser( request, alertFunction )
 }
 
 exports.editUser = function( userId, request, alertFunction ) {
-    
-    console.log('gonna save!');   
+    var queryString = 'select * ' +
+    'from members ' +
+    'join roles on members.role = roles.roleID ' +
+    'join memberStatus on members.status = memberStatus.statusID';
 
-    var updateQuery = "UPDATE members SET " +
-    "firstName = '" + request.body.firstName + "', " +
-    "lastName = '" + request.body.lastName + "', " +
-    "email = '" + request.body.email + "', " +
-    "notes = '" + request.body.notes + "' " +
-    "where id = " + userId;
-    console.log(updateQuery);
-    
-    dbConnection.query( updateQuery, function(err, newRows) {
+    dbConnection.query(queryString, function(err, rows, fields) {
         if(err) {
             console.log(err);
             alertFunction('error', 'Your request could not be processed right now.');
+        }
         if( rows.length ) {
-//            var updateQuery = "UPDATE members SET lastName ";
-//            
-//            dbConnection.query( updateQuery, function(err, newRows) {
-//                if(err) {
-//                    console.log(err);
-//                    alertFunction('error', 'Your request could not be processed right now.');
-//                }   
-//                else 
-//                    alertFunction('success', 'Successfully edited ' + rows[0].firstName + " "
-//                                 + rows[0].lastName);
-//            });
-            //Need stuff here
-            console.log(request.body.firstName);
+            
+            var updateQuery =   "UPDATE members SET " +
+                                "firstName = '" + request.body.firstName + "', " +
+                                "lastName = '" + request.body.lastName + "', " +
+                                "email = '" + request.body.email + "', " +
+                                "notes = '" + request.body.notes + "' " +
+                                "where id = " + userId;
+            console.log(updateQuery);
+            
+            dbConnection.query( updateQuery, function(err, newRows){
+				    //newUserMysql.id = rows.insertId;
+                    if(err){
+                        console.log(err);
+                        alertFunction('error', 'Could not edit ' + request.body.firstName 
+                              + " " + request.body.lastName + "." );
+                    }
+                    else {
+                        alertFunction('success', 'Successfully edited ' + request.body.firstName 
+                              + " " + request.body.lastName + "." );
+                    }
+			});	
+                
+                
         } else {
-            alertFunction('success', 'Successfully edited user!');
+            alertFunction('error', 'User does not currently exist.');
         }
     });
 }
