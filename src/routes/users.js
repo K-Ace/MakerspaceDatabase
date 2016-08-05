@@ -54,22 +54,29 @@ router.post('/edit-user/:id', function(req, res, next ) {
         function( alertType, alertDescription ) {
                 req.app.database.getUser( 
                    req.params.id,
-                   function ( alertType, alertDescription ) { //Alert should be added eventually
-                       console.log(alertDescription);
-                       res.redirect('/users');
+                   function ( alrTyp, alrtDescrp ) { //Alert should be added eventually
+                       res.render('edit-user', {
+                           alert: {
+                               type: alrTyp,
+                               description: alrtDescrp
+                           }
+                       });
                     },
                    function( fieldArray ) {
                         res.render('edit-user', { 
-                        nameField: fieldArray[0].firstName,
-                        surnameField: fieldArray[0].lastName,
-                        genderField: fieldArray[0].gender,
-                        emailField: fieldArray[0].email,
-                        statusField: fieldArray[0].status,
-                        affiliationField: fieldArray[0].affiliation,
-                        rfidField: fieldArray[0].rfidNumber,
-                        joinedField: fieldArray[0].joinDate,
-                        notesField: fieldArray[0].notes,
-                        alert: { type: '', description: '' }
+                            alert: {
+                               type: alertType,
+                               description: alertDescription
+                            },
+                            nameField: fieldArray[0].firstName,
+                            surnameField: fieldArray[0].lastName,
+                            genderField: fieldArray[0].gender,
+                            emailField: fieldArray[0].email,
+                            statusField: fieldArray[0].status,
+                            affiliationField: fieldArray[0].affiliation,
+                            rfidField: fieldArray[0].rfidNumber,
+                            joinedField: fieldArray[0].joinDate,
+                            notesField: fieldArray[0].notes,
                        }); 
                    }
                 );

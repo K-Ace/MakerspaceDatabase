@@ -3,11 +3,11 @@
 var database = require('mysql');
 
 var dbConnection = database.createConnection({
-    host : 'makerspace.unh.edu',
-    user : 'web',
-    password : 'GlGNR5yckoppvyOaLB3YVorOD0lSy0kg',
-    database : 'database',
-    dateStrings: 'dates'
+    host : 'placeholder',
+    user : 'placeholder',
+    password : 'placeholder',
+    database : 'placeholder',
+    dateStrings: 'placeholder'
 });
 
 
