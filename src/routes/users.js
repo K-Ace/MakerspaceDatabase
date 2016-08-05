@@ -28,8 +28,12 @@ router.get('/edit-user/:id', function(req, res, next) {
    req.app.database.getUser( 
        req.params.id,
        function ( alertType, alertDescription ) { //Alert should be added eventually
-           console.log(alertDescription);
-           res.redirect('/users');
+           res.render('edit-user', {
+                           alert: {
+                               type: alertType,
+                               description: alertDescription
+                           }
+                       });
         },
        function( fieldArray ) {
             res.render('edit-user', { 

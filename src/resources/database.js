@@ -107,7 +107,7 @@ exports.getUser = function( userId, alertFunction, fillFields ) {
         if (err)
                 alertFunction('error', 'No user ' + userId + ' exists.');
         if (!rows.length) {
-             alertFunction('error', 'User already exists.');
+             alertFunction('error', 'User does not exist.');
         } else {
             fillFields(rows);
         }
