@@ -6,7 +6,7 @@ html(lang='en')
     meta(name='viewport', content='width=device-width, initial-scale=1')
     meta(name='description', content='')
     meta(name='author', content='')
-    title SB Admin 2 - Bootstrap Admin Theme
+    title Makerspace Administration
     style
         include ./styles.jade
     include ./scripts.jade
@@ -24,18 +24,17 @@ html(lang='en')
             .panel-heading
               h3.panel-title Please Sign In
             .panel-body
-              form(role='form')
-                fieldset
-                  .form-group
-                    input.form-control(placeholder='E-mail', name='email', type='email', autofocus='')
-                  .form-group
-                    input.form-control(placeholder='Password', name='password', type='password', value='')
-                  .checkbox
-                    label
-                      input(name='remember', type='checkbox', value='Remember Me')
-                      | Remember Me
-                  // Change this to a button or input when using this as a form
-                  a.btn.btn-lg.btn-success.btn-block(href='index.html') Login
+              form(role='form', action='login', method='post')
+                .form-group
+                  input.form-control(placeholder='E-mail', name='email', type='email', autofocus='')
+                .form-group
+                  input.form-control(placeholder='Password', name='password', type='password', value='')
+                //.checkbox
+                  label
+                    input(name='remember', type='checkbox', value='Remember Me')
+                    | Remember Me
+                // Change this to a button or input when using this as a form
+                a.btn.btn-lg.btn-primary.btn-block(type='submit') Login
     // jQuery
     script(src='../bower_components/jquery/dist/jquery.min.js')
     // Bootstrap Core JavaScript
