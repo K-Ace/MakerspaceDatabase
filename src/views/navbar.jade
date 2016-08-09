@@ -10,7 +10,7 @@ nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bot
     ul.nav.navbar-top-links.navbar-right
       // /.dropdown
       li.dropdown
-        a.dropdown-toggle(data-toggle='dropdown', href='#')
+        a.dropdown-toggle(data-toggle='dropdown')
           i.fa.fa-user.fa-fw
           i.fa.fa-caret-down
         ul.dropdown-menu.dropdown-user
@@ -49,27 +49,27 @@ nav.navbar.navbar-default.navbar-static-top(role='navigation', style='margin-bot
               i.fa.fa-table.fa-fw
               |  Users
           li
-            a(href='equipment')
+            a(href='/equipment')
               i.fa.fa-cogs.fa-fw
               |  Equipment
           li
-            a(href='#')
+            a
               i.fa.fa-usd.fa-fw
               |  Finances
               span.fa.arrow
             // Submenu
             ul.nav.nav-second-level
               li
-                a(href='purchase_request')
+                a(href='/purchase_request')
                   i.fa.fa-plus-circle.fa-fw
                   |  Purchase Request
             ul.nav.nav-second-level
               li
-                a(href='finances')
+                a(href='/finances')
                   i.fa.fa-table.fa-fw
                   |  Transactions
           li
-            a(href='#')
+            a
               i.fa.fa-edit.fa-fw
               |  Actions
               span.fa.arrow

@@ -10,17 +10,12 @@ html(lang='en')
     style
         include ./styles.jade
     include ./scripts.jade
-    // HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-    // WARNING: Respond.js doesn't work if you view the page via file://
-    //if lt IE 9
-      script(src='https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js')
-      script(src='https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js')
-      script(src='https://use.fontawesome.com/9a4a4c94e1.js')
-  body
-    #wrapper
-      // Navigation
-      include ./navbar.jade
 
+body
+    // Navigation
+    include ./navbar.jade
+    #wrapper
+      
       #page-wrapper
         .row
           .col-lg-12
@@ -37,7 +32,7 @@ html(lang='en')
                   .col-xs-9.text-right
                     .huge #{userCount}
                     div Users
-              a(href='users')
+              a(href='/users')
                 .panel-footer
                   span.pull-left View all users
                   span.pull-right
@@ -52,7 +47,7 @@ html(lang='en')
                   .col-xs-9.text-right
                     .huge 12
                     div Tools/Equipment
-              a(href='equipment')
+              a(href='/equipment')
                 .panel-footer
                   span.pull-left View Details
                   span.pull-right
@@ -67,7 +62,7 @@ html(lang='en')
                   .col-xs-9.text-right
                     .huge $1245
                     div Remaining budget
-              a(href='finances')
+              a(href='/finances')
                 .panel-footer
                   span.pull-left View Details
                   span.pull-right
@@ -82,7 +77,7 @@ html(lang='en')
                   .col-xs-9.text-right
                     .huge 2
                     div Inoperative equipment
-              a(href='equipment')
+              a(href='/equipment')
                 .panel-footer
                   span.pull-left View Details
                   span.pull-right
@@ -95,7 +90,8 @@ html(lang='en')
             include ./donut.jade
           .col-lg-8
             include ./chat.jade
-
+        // /.col-lg-12
+        // /.row
       // /#page-wrapper
     // /#wrapper
     // jQuery
@@ -104,9 +100,5 @@ html(lang='en')
     script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
     // Metis Menu Plugin JavaScript
     script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
-    // Morris Charts JavaScript
-    script(src='../bower_components/raphael/raphael-min.js')
-    script(src='../bower_components/morrisjs/morris.min.js')
-    script(src='../js/morris-data.js')
     // Custom Theme JavaScript
     script(src='../dist/js/sb-admin-2.js')

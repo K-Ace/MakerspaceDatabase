@@ -11,14 +11,6 @@ router.get('/', function(req, res, next) {
     });
 });
 
-//router.post('/index', function(req, res, next) {
-//    var text = req.body.text,
-//        email = req.body.email,
-//        date = req.body.date;
-//    console.log("Name: " + text + " Email: " + email + " Date: " + date);
-//    res.render('index');
-//})
-
 router.get('/purchase_request', function(req, res, next) {
   res.render('purchase-request');
 });
