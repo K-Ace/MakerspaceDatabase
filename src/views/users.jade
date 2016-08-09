@@ -50,13 +50,36 @@ html(lang='en')
                     each user in userParams
                         tr.odd.gradeX
                             each attribute in user.attributes
+                              if attribute == 'Active'
+                                td
+                                  font(color='green')
+                                    i.fa.fa-check.fa-fw
+                                    strong  Active
+                              else if attribute == 'Inactive'
+                                td
+                                  font(color='red')
+                                    i.fa.fa-times.fa-fw
+                                    strong  Inactive
+                              else if attribute == 'Board Member'
+                                td
+                                  font(color='#663399')
+                                    i.fa.fa-gavel.fa-fw
+                                    strong  Board Member
+                              else if attribute == 'Mentor'
+                                td
+                                  font(color='MediumBlue')
+                                    i.fa.fa-life-ring.fa-fw
+                                    strong  Mentor
+                              else if attribute == '0000-00-00'
+                                td Unknown
+                              else
                                 td= attribute
                             td
                                 a(href='users/edit-user/' + user.userId) 
                                     i.fa.fa-pencil-square.fa-2x
                                 | &nbsp;&nbsp;&nbsp;
                                 a(href='users/view-user/' + user.userId)
-                                    i.fa.fa-info-circle.fa-2x
+                                    i.fa.fa-info-circle.fa-2x(style="color:blue")
 
               // /.panel-body
             .well
