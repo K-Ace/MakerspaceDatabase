@@ -1,0 +1,104 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    meta(name='description', content='')
+    meta(name='author', content='')
+    title Makerspace Administration
+    style
+        include ./../common/styles.jade
+    include ./../common/scripts.jade
+
+body
+    // Navigation
+    include ./../common/navbar.jade
+    #wrapper
+      
+      #page-wrapper
+        .row
+          .col-lg-12
+            h1.page-header Dashboard
+          // /.col-lg-12
+        // /.row
+        .row
+          .col-lg-3
+            .panel.panel-primary
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-users.fa-5x
+                  .col-xs-9.text-right
+                    .huge #{userCount}
+                    div Users
+              a(href='/users')
+                .panel-footer
+                  span.pull-left View all users
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  .clearfix
+          .col-lg-3
+            .panel.panel-green
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-tasks.fa-5x
+                  .col-xs-9.text-right
+                    .huge 12
+                    div Tools/Equipment
+              a(href='/equipment')
+                .panel-footer
+                  span.pull-left View Details
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  .clearfix
+          .col-lg-3
+            .panel.panel-yellow
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-usd.fa-5x
+                  .col-xs-9.text-right
+                    .huge $1245
+                    div Remaining budget
+              a(href='/finances')
+                .panel-footer
+                  span.pull-left View Details
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  .clearfix
+          .col-lg-3
+            .panel.panel-red
+              .panel-heading
+                .row
+                  .col-xs-3
+                    i.fa.fa-exclamation-triangle.fa-5x
+                  .col-xs-9.text-right
+                    .huge 2
+                    div Inoperative equipment
+              a(href='/equipment')
+                .panel-footer
+                  span.pull-left View Details
+                  span.pull-right
+                    i.fa.fa-arrow-circle-right
+                  .clearfix
+        .row
+          //.col-lg-8  
+            include ./timeline.jade
+          .col-lg-4
+            include ./../addons/donut.jade
+          .col-lg-8
+            include ./../addons/chat.jade
+        // /.col-lg-12
+        // /.row
+      // /#page-wrapper
+    // /#wrapper
+    // jQuery
+    script(src='../bower_components/jquery/dist/jquery.min.js')
+    // Bootstrap Core JavaScript
+    script(src='../bower_components/bootstrap/dist/js/bootstrap.min.js')
+    // Metis Menu Plugin JavaScript
+    script(src='../bower_components/metisMenu/dist/metisMenu.min.js')
+    // Custom Theme JavaScript
+    script(src='../dist/js/sb-admin-2.js')
